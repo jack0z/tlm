@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trump Language Model</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://unpkg.com/compromise"></script>
+</head>
+<body>
+    <!-- CRT and Terminal Effects -->
+    <div class="crt-overlay"></div>
+    <div class="vignette"></div>
+    
+    <!-- Background Effects -->
+    <div class="background-effects">
+        <div class="grid-overlay"></div>
+    </div>
+    
+    <div class="boot-sequence">
+        <div class="boot-text"></div>
+        <div class="progress-bar">
+            <div class="progress"></div>
+        </div>
+        <div class="boot-status">Initializing MAGA-OS v4.5...</div>
+    </div>
+    <div class="container">
+        <div class="header">
+            <div class="title">
+                <pre class="ascii-title">
+  ████████╗██████╗ ██╗   ██╗███╗   ███╗██████╗ 
+  ╚══██╔══╝██╔══██╗██║   ██║████╗ ████║██╔══██╗
+      ██║   ██████╔╝██║   ██║██╔████╔██║██████╔╝
+      ██║   ██╔══██╗██║   ██║██║╚██╔╝██║██╔═══╝ 
+      ██║   ██║  ██║╚██████╔�██║ ╚═╝ ██║██║     
+      ╚═╝   ╚═╝  ╚═╝ ╚═════╝ ╚═╝     ╚═╝╚═╝     
+  ██╗      █████╗ ███╗   ██╗ ██████╗ ██╗   ██╗ █████╗  ██████╗ ███████╗
+  ██║     ██╔══██╗████╗  ██║██╔════╝ ██║   ██║██╔══██╗██╔════╝ ██╔════╝
+  ██║     ███████║██╔██╗ ██║██║  ███╗██║   ██║███████║██║  ███╗█████╗  
+  ██║     ██╔══██║██║╚██╗██║██║   ██║██║   ██║██╔══██║██║   ██║██╔══╝  
+  ███████╗██║  ██║██║ ╚████║╚██████╔╝╚██████╔╝██║  ██║╚██████╔╝███████╗
+  ╚══════╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝  ╚═════╝ ╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+  ███╗   ███╗ ██████╗ ██████╗ ███████╗██╗     
+  ████╗ ████║██╔═══██╗██╔══██╗██╔════╝██║     
+  ██╔████╔██║██║   ██║██║  ██║█████╗  ██║     
+  ██║╚██╔╝██║██║   ██║██║  ██║██╔══╝  ██║     
+  ██║ ╚═╝ ██║╚██████╔╝██████╔╝███████╗███████╗
+  ╚═╝     ╚═╝ ╚═════╝ ╚═════╝ ╚══════╝╚══════╝
+                </pre>
+            </div>
+            <div class="ascii-container">
+                <pre class="ascii-decoration">
+                    ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠛⠋⠉⡉⣉⡛⣛⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿
+                    ⣿⣿⣿⣿⣿⣿⣿⣿⡿⠿⠁⠄⠄⠄⠄⠄⢀⣸⣿⣿⡿⠿⡯⢙⠿⣿⣿⣿⣿⣿⣿
+                    ⣿⣿⣿⣿⣿⣿⣿⡿⠿⠄⠄⠄⠄⡀⡀⠄⢀⣀⣉⣉⣉⠁⠐⣶⣶⣿⣿⣿⣿⣿⣿
+                    ⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠁⣿⣿⣀⠈⠿⢟⡛⠛⣿⠛⠛⣿⣿⣿⣿⣿⣿⣿
+                    ⣿⣿⣿⣿⣿⣿⣿⠄⠄⠄⠄⠄⠈⠁⠰⣄⣴⡬⢵⣴⣿⣤⣽⣿⣿⣿⣿⣿⣿⣿
+                    ⣿⣿⣿⣿⣿⣿⣿⠄⠄⢀⢄⡀⠄⠄⠄⠄⡉⠻⣿⡿⠁⠘⠛⡿⣿⣿⣿⣿⣿⣿⣿
+                    ⣿⣿⣿⣿⣿⣿⣿⡿⠿⠄⠄⠈⠻⠄⠄⠄⠄⢘⣧⣀⠾⠿⠶⠦⢳⣿⣿⣿⣿⣿⣿⣿
+                    ⣿⣿⣿⣿⣿⣿⣤⡀⢀⡀⠄⠄⠄⠄⠄⠄⠻⢣⣶⡒⠶⢤⢾⣿⣿⣿⣿⣿⣿⣿
+                    ⣿⣿⣿⣿⡿⠿⠋⠄⢘⣿⣦⡀⠄⠄⠄⠄⠄⠉⠛⠻⠻⠺⣼⣿⠟⠋⠛⠿⣿⣿
+                    ⠋⠉⠁⠄⠄⠄⠄⠄⠄⢻⣿⣿⣶⣄⡀⠄⠄⠄⠄⢀⣤⣾⣿⣿⡀⠄⠄⠄⠄⢹
+                    ⠄⠄⠄⠄⠄⢀⠻⠄⠄⠄⢻⣿⣿⣿⣷⡤⠄⠰⡆⠄⠄⠈⠉⠛⠿⢦⣀⡀⡀⠄
+                    ⠄⠄⠄⠄⠄⢀⠻⠄⠄⠄⢻⠄⠈⢿⣿⠟⡋⠄⠄⠄⢣⠄⠄⠄⠄⠄⠄⠄⠄⠈⠹⣿⣀
+                    ⠄⠄⠄⠄⠄⢀⠻⠄⠄⠄⢻⠄⠈⣷⣿⣿⣿⣿⠄⠄⠄⢺⣇⠄⠄⠄⠄⠄⠄⠄⠄⠄⠸⣿
+                    ⠄⠄⠄⠄⠄⠄⢀⠻⠄⠄⠄⠄⢻⠄⠈⠹⠹⣿⣿⣿⣿⡇⠄⠄⠸⣿⡄⠄⠈⠁⠄⠄⠄⠄⠄⣿
+                    ⠄⠄⠄⠄⠄⢀⠻⠄⠄⠄⢻⠄⠈⠹⢻⣿⡇⠄⠄⠄⢹⣧⠄⠄⠄⠄⠄⠄⠄⠄⠘
+                </pre>
+            </div>
+            <div class="cursor"></div>
+        </div>
+
+        <div class="content">
+            <div class="welcome-messages">
+                <div class="line typewriter">> Welcome to the Trump Language Model...</div>
+                <div class="line typewriter">> Initializing wisdom...</div>
+                <div class="line typewriter">> "I have the best words. Nobody has better words than me."</div>
+                <div class="line typewriter">> "Sometimes by losing a battle, you find a new way to win the war."</div>
+                <div class="line typewriter">> "The point is, you can never be too greedy."</div>
+                <div class="line typewriter">> "We're going to make Greenland the 51st state. Imagine the flag with an extra star. Beautiful. The best flag anyone's ever seen."</div>
+                <div class="line typewriter">> "I've talked to the penguins and polar bears. They love me. They said, 'Mr. Trump, please, buy Greenland. Save us from Denmark.' Tremendous support from the wildlife community."</div>
+            </div>
+            <div class="input-line">
+                <span class="prompt">></span>
+                <input type="text" class="input-field" placeholder="Type your question..." autofocus>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div>System Status: <span class="system-info">Online</span></div>
+            <div>&copy; 2025 Trump Language Model</div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
